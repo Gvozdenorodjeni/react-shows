@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import React, { useEffect, useState } from "react";
+import { Route, Switch } from "react-router-dom";
 
+import Cards from "./components/Cards/Cards";
+import SingleShow from "./Pages/SingleShow/SingleShow";
+
+export const showsContext = React.createContext({});
 function App() {
+  const { Provider: ShowsProvider } = showsContext;
+  const [shows, setShows] = useState([]);
+
+  useEffect(() => {
+    fetch("http://api.tvmaze.com/shows")
+      .then((response) => response.json())
+      .then((data) => setShows(data));
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <ShowsProvider value={{ shows, setShows }}>
+          <Route exact path="/" component={Cards}></Route>
+          <Route
+            exact
+            path="/show/:id"
+            value={{ shows, setShows }}
+            component={SingleShow}
+          ></Route>
+        </ShowsProvider>
+      </Switch>
     </div>
   );
 }
