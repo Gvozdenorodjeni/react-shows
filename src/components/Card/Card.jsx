@@ -6,7 +6,7 @@ const Card = (props) => {
   const { index } = props;
 
   let topFifty = [];
-  if (index < 5) {
+  if (index < 50) {
     topFifty.push(show);
   }
 
@@ -18,12 +18,16 @@ const Card = (props) => {
             pathname: `/show/${show.id}`,
           }}
         >
-          <div className="cardImage">
+          <div onClick={() => props.GetId(show)} className="cardImage">
             <img src={show.image.medium} alt="image" />
           </div>
-          <div className="rating">{show.rating.average}</div>
-          <div className="showName">{show.name}</div>
         </Link>
+        <div className="rating">
+          {show.rating.average % 2 == 0
+            ? show.rating.average + ".0"
+            : show.rating.average}
+        </div>
+        <div className="showName">{show.name}</div>
       </div>
     </>
   ));

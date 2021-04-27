@@ -1,0 +1,84 @@
+.SingleShowCard {
+  width: 80%;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 20px;
+  padding: 30px;
+  .Details {
+    display: flex;
+    margin-top: 30px;
+    .SingleShowCardImg {
+      img {
+        height: 550px;
+        border-radius: 20px;
+      }
+    }
+  }
+  .SingleShowCardInfo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    .name {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .genre {
+      display: flex;
+      justify-content: center;
+      p {
+        background-color: rgb(233, 233, 233);
+        border-radius: 10px;
+        margin: 15px;
+        padding: 5px 10px;
+      }
+    }
+    .summary {
+      width: 70%;
+      margin: 15px auto;
+    }
+  }
+  .castHeader {
+    border-bottom: 1px solid #1a73e8;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .GridList {
+      i {
+        font-size: 1.3rem;
+        color: #1a73e8;
+      }
+    }
+  }
+  .grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .castImg {
+      margin: 15px;
+      width: 20%;
+      border-radius: 10px;
+      img {
+        border-radius: 10px;
+      }
+    }
+    .castName {
+      text-align: center;
+      font-weight: 400;
+    }
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    border-bottom: #1a73e8 1px solid;
+    img {
+      height: 80px;
+    }
+    .castName {
+      margin-left: 20px;
+    }
+  }
+}

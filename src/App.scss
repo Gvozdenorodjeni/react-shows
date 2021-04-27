@@ -1,0 +1,28 @@
+.App {
+  background-color: rgb(233, 233, 233);
+}
+.headerWrapper {
+  background-color: #1a73e8;
+  header {
+    width: 80%;
+    margin: auto;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    .home {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+footer {
+  background-color: #1a73e8;
+  .Copyright {
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    background-color: #1a73e8;
+    color: white;
+    font-size: 0.5rem;
+  }
+}

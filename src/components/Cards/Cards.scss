@@ -1,0 +1,23 @@
+.Search {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 20px 0;
+  input {
+    border: 2px solid #1a73e8;
+    border-radius: 10px;
+    margin-left: 10px;
+    outline: none;
+    padding-left: 5px;
+  }
+  span {
+    font-weight: 500;
+  }
+}
+.Cards {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
